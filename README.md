@@ -47,7 +47,7 @@ This is a simple web-based application that detects whether an SMS is **Spam** o
    pip install -r requirements.txt
    ```
 
-2. **Train model** (if not already trained)
+2. **Train model**
    ```bash
    python spam_model.py
    ```
@@ -73,7 +73,10 @@ This is a simple web-based application that detects whether an SMS is **Spam** o
 ├── vectorizer.pkl        # Fitted CountVectorizer
 ├── requirements.txt      # Python dependencies
 ├── templates/
-│   └── index.html        # HTML form (not included here)
+│   └── index.html        # HTML form
+├── script/
+│   └── style.css         # CSS form 
+│   └── script.js         # JS form
 └── README.md             # Project overview
 ```
 
