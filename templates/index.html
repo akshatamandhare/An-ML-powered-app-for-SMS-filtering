@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam SMS Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="theme-toggle">
+        <label class="switch">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-label"><i class="fas fa-sun"></i> / <i class="fas fa-moon"></i></span>
+    </div>
+
+    <div class="container">
+        <h1><i class="fas fa-envelope-open-text"></i> Spam SMS Detection</h1>
+        <form method="POST">
+            <textarea name="message" placeholder="Type your message here..." required></textarea>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Check</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <h2><i class="fas fa-flag"></i> Result: {{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

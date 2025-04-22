@@ -1,0 +1,163 @@
+/* static/style.css */
+
+:root {
+    --bg-light: #f5f7fa;
+    --bg-dark: #1e1e2f;
+    --container-light: #ffffff;
+    --container-dark: #2c2c3e;
+    --text-light: #333;
+    --text-dark: #f1f1f1;
+    --button: #007BFF;
+    --button-hover: #0056b3;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+body.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    background: var(--container-light);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+body.dark-mode .container {
+    background: var(--container-dark);
+}
+
+h1 {
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode textarea {
+    background: #444;
+    color: #fff;
+    border: 1px solid #777;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: var(--button);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeIn 0.8s ease;
+}
+
+body.dark-mode .result {
+    background-color: #444;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(21px);
+}
+
+.mode-label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
